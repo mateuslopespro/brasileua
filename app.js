@@ -9,7 +9,7 @@ app.get('/', function(req, res){
 })
 //contact
 app.get('/contact', function(req, res){
-	res.render('pages/contact')
+	res.render('pages/contact',{title: ''})
 })
 //results
 app.get('/results', function(req, res){
