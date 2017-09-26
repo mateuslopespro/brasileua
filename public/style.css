@@ -6,8 +6,6 @@ body{
 	font-family: 'Roboto', sans-serif !important;
 }
 body a,.encontrar{
-	background-color: #FFF;
-	border: none;
 	color: rgba(2,117,216,1);
 }
 body a:hover,.encontrar:hover{
