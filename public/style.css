@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+body{
+	font-family: 'Roboto', sans-serif !important;
+}
+body a{
+	color: rgba(2,117,216,1);
+}
+body a:hover{
+	color: rgba(1,76,140,1);
+}
+footer{
+	margin-top: 50px;
+	line-height: 100px;
+}
+footer i{
+	padding: 10px;
+}
+.banner-top-button a{
+	display: inline-block;
+	padding: 4px;
+}
+.banner-top-button a>span{
+	font-size: 24px;
+	padding-left: 5px;
+	display: inline-block;
+}
+.banner-top-button a:nth-child(1){
+	margin-right: 20px;
+}
+.banner-home{
+	background-color: rgba(39,174,96,1);
+}
+.banner-home h1{
+	color: #FFF;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.banner-home h1 .yellow{
+	color: rgba(255,255,0,1);
+}
+.form-search{
+	margin-top: 50px;
+}
+.form-search form>button{
+	background-color: rgba(39,174,96,1);
+	cursor: pointer;
+	color: #FFF;
+	margin-top: 20px;
+}
+@media screen and (max-width: 400px){
+	.banner-home h1{
+		font-size: 2.8em !important;
+		padding-top: 50%;
+		padding-left: 0.1em;
+	}
+}
+@media screen and (min-width: 400px) and (max-width: 600px){
+	.banner-home h1{
+		font-size: 3.8em !important;
+		padding-top: 25%;
+		padding-left: 0.1em;
+	}
+}
+@media screen and (min-width: 600px) and (max-width: 800px){
+	.banner-home h1{
+		font-size: 4.6em !important;
+		padding-top: 15%;
+		padding-left: 0.2em;
+	}
+}
+@media screen and (min-width: 800px) and (max-width: 1000px){
+	.banner-home h1{
+		font-size: 5em !important;
+		padding-top: 10%;
+		padding-left: 0.2em;
+	}
+}
+@media screen and (min-width: 1000px){
+	.banner-home h1{
+		font-size: 6em !important;
+		padding-top: 10%;
+		padding-left: 0.5em;
+	}
+}
