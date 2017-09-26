@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$('.text-contact').height($(window).height())
 	$('.form-search').height($(window).height())
 	//banner menu
-	$('.encontrar').on('click tap', function(){
+	$('.encontrar').on('click touchstart touch', function(){
 		window.scroll({
 		  top: $('.form-search').position().top,
 		  left: 0, 
