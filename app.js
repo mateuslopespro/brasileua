@@ -1,8 +1,10 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const port = process.env.PORT || 3000
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs')
 app.use(express.static('public'))
+app.use(cors())
 //home
 app.get('/', function(req, res){
 	res.render('pages/index',{title: 'Encontre empresas brasileiras nos EUA.'})
@@ -17,6 +19,18 @@ app.get('/results', function(req, res){
 })
 //page
 app.get('/page', function(req, res){
+	res.render('pages/page',{idPage: null})
+})
+app.get('/i/states', function(req, res){
+	res.json({states: ['Massachusetts']})
+})
+app.get('/i/:state/cities', function(req, res){
+	res.json({cities: ['Boston']})
+})
+app.get('/i/:state/:city/categories', function(req, res){
+	res.json({categories: ['Restaurantes']})
+})
+app.get('/i/:state/:city/:area/results/:page', function(req, res){
 	res.render('pages/page',{idPage: null})
 })
 //404 Not Found
