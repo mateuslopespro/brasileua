@@ -3,7 +3,7 @@ const cors = require('cors')
 const app = express()
 const port = process.env.PORT || 3000
 app.set('view engine', 'ejs')
-app.use(express.static('public'))
+app.use('/static', express.static('public'))
 app.use(cors())
 //home
 app.get('/', function(req, res){
@@ -14,8 +14,8 @@ app.get('/contact', function(req, res){
 	res.render('pages/contact',{title: ''})
 })
 //results
-app.get('/results', function(req, res){
-	res.render('pages/results',{state: null, city: null, area: null})
+app.post('/search/:state/:city/:category', function(req, res){
+	res.render('pages/search',{title: req.params.category+' | '+req.params.city, state: null, city: null, area: null})
 })
 //page
 app.get('/page', function(req, res){
@@ -25,7 +25,7 @@ app.get('/i/states', function(req, res){
 	res.json({states: ['Massachusetts']})
 })
 app.get('/i/:state/cities', function(req, res){
-	res.json({cities: ['Boston']})
+	res.json({cities: ['Boston city']})
 })
 app.get('/i/:state/:city/categories', function(req, res){
 	res.json({categories: ['Restaurantes']})

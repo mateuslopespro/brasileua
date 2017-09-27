@@ -57,6 +57,7 @@ $(document).ready(function(){
 	$('.selectState').on('change', function(){
 		let state = $('.selectState').val()
 		if(state!=0){
+
 			$.get('i/'+state+'/cities', function(data){
 				for(let i = 0; i<data.cities.length;i++){
 					$('.selectCity').append('<option>'+data.cities[i]+'</option>')
@@ -64,14 +65,17 @@ $(document).ready(function(){
 			})
 		}
 		else{
-			$('.selectCity').html('<option>Escolha a cidade</option>')
-			$('.selectCategory').html('<option>Escolha a categoria</option>')
+			$('form').attr('action','')
+			$('form>.btn').addClass('disabled')
+			$('.selectCity').html('<option value="0">Escolha a cidade</option>')
+			$('.selectCategory').html('<option value="0">Escolha a categoria</option>')
 		}
 	})
 	$('.selectCity').on('change', function(){
 		let state = $('.selectState').val()
 		let city = $('.selectCity').val()
 		if(city!=0 && state!=0){
+			$('.selectCategory').html('<option value="0">Escolha a categoria</option>')
 			$.get('i/'+state+'/'+city+'/categories', function(data){
 				for(let i = 0; i<data.categories.length;i++){
 					$('.selectCategory').append('<option>'+data.categories[i]+'</option>')
@@ -79,7 +83,22 @@ $(document).ready(function(){
 			})
 		}
 		else{
-			$('.selectCategory').html('<option>Escolha a categoria</option>')
+			$('form').attr('action','')
+			$('form>.btn').addClass('disabled')
+			$('.selectCategory').html('<option value="0">Escolha a categoria</option>')
+		}
+	})
+	$('.selectCategory').on('change', function(){
+		let state = $('.selectState').val()
+		let city = $('.selectCity').val()
+		let category = $('.selectCategory').val()
+		if(state!=0 && city!=0 && category!=0){
+			$('form').attr('action','/search/'+state+'/'+city+'/'+category)
+			$('form>.btn').removeClass('disabled')
+		}
+		else{
+			$('form').attr('action','')
+			$('form>.btn').addClass('disabled')		
 		}
 	})
 

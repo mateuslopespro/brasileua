@@ -60,6 +60,42 @@ footer i{
 	font-size: 20px;
 	font-weight: 300;
 }
+.search-results-title{
+	margin-bottom: 30px;
+	margin-top: 20px;
+	font-weight: 300;
+}
+.item-result {
+	margin-bottom: 50px;
+}
+.item-result .item-result-title a{
+	color: rgba(46,204,113,1);
+	font-size: 22px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	display: block;
+}
+.item-result .item-result-intro{
+	font-weight: 300;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+.item-result .item-result-address{
+	font-weight: 500;
+}
+.item-result .item-result-button{
+	margin-top: 16px;
+
+}
+.item-result .item-result-button a{
+	background-color: rgba(46,204,113,1);
+	color: #FFF;
+	line-height: 36px;
+	font-size: 20px;
+}
+.item-result .item-result-button a:hover{
+	background-color: #27ae60;
+}
 @media screen and (max-width: 400px){
 	.banner-home h1{
 		font-size: 2.8em !important;
