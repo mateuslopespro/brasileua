@@ -1,4 +1,7 @@
 <%- include ../partials/head %>
+<script type="text/javascript">
+var places = <%-JSON.stringify(places)%>;
+</script>
 <div class="container-fluid">
 <div class="row banner-top-button">
 	<div class="col-md-12 text-center">
@@ -15,20 +18,20 @@
 <div class="row form-search justify-content-center">
 
 	<div class="col-md-4 text-center">
-		<form method="post" action="">
+		<form method="post" action="/search">
 			<label for="state">
 				<select name="state" class="form-control selectState">
-					<option value="0">Escolha o estado</option>
+				<option value="none">Escolha o estado</option>
 				</select>
 			</label><br>
 			<label for="city">
 				<select name="city" class="form-control selectCity">
-					<option value="0">Escolha a cidade</option>
+					<option value="none">Escolha a cidade</option>
 				</select>
 			</label><br>
 			<label for="area">
 				<select name="state" class="form-control selectCategory">
-					<option value="0">Escolha a categoria</option>
+					<option value="none">Escolha a categoria</option>
 				</select>
 			</label><br>
 			<button type="submit" class="btn disabled">Confirmar</button>

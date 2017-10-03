@@ -1,0 +1,55 @@
+<%- include ../partials/head %>
+<script type="text/javascript">
+	var company = <%-JSON.stringify(company)%>;
+</script>
+<div class="container-fluid">
+<div class="row banner-top-button">
+	<div class="col-md-12 text-center">
+		<a href="/"><i class="fa fa-home" aria-hidden="true" style="font-size:24px"></i><span> Principal</span></a>
+	</div>
+</div>
+<div class="row justify-content-center page">
+
+	<div class="col-md-8 name section">
+		<h1></h1>
+	</div>
+	<div class="col-md-8 intro section">
+		<p></p>
+	</div>
+	<div class="col-md-8 address section">
+		<b>Endereço:</b>
+		<address></address>
+	</div>
+	<div class="col-md-8 contact-website section">
+	<h2>Contatos da empresa:</h2>
+		<div class="phone landline">
+			<b>Telefone (fixo):</b>
+			<p></p>
+		</div>
+		<div class="phone cell">
+			<b>Telefone (móvel):</b>
+			<p></p>
+		</div>
+		<div class="phone whatsapp">
+			<b>Telefone (whatsapp):</b>
+			<p></p>
+		</div>
+		<div class="website">
+			<b>Website:</b>
+			<p></p>
+		</div>
+	</div>
+	<div class="col-md-8 social-medias section">
+		<h2>Redes sociais da empresa:</h2>
+		<div>
+		</div>
+	</div>
+	<div class="col-md-8 about section">
+		<h2>Sobre:</h2>
+		<div>
+		</div>
+	</div>
+</div>
+</div>
+<script type="text/javascript" src="/static/script-page.js"></script>
+<%- include ../partials/footer %>
