@@ -1,5 +1,5 @@
 const express = require('express')
-const mongoose = require('mongoose')
+let mongoose = require('mongoose')
 const cors = require('cors')
 const database = process.env.DB
 const app = express()
@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000
 app.set('view engine', 'ejs')
 app.use('/static', express.static('public'))
 app.use(cors())
-mongoose.connect(database, { useMongoClient: true})
+let db = mongoose.connect(database, { useMongoClient: true})
 //home
 app.get('/', function(req, res){
 	
