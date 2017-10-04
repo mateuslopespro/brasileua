@@ -1,7 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const dbConfig = require('./dbconfig')
+let dbConfig
+try{
+	dbConfig = require('./dbconfig')
+}catch(err){}
 const database = process.env.DB || dbConfig
 const app = express()
 const port = process.env.PORT || 3000
