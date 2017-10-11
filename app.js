@@ -2,6 +2,7 @@ const express = require('express')
 let mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 const cors = require('cors')
+
 const database = process.env.DB
 const app = express()
 const port = process.env.PORT || 3000
@@ -17,7 +18,12 @@ app.get('/', function(req, res){
 		if (err) throw err;
 		return results
 	}).then(function(results){
-		res.render('pages/index',{title: 'Encontre empresas brasileiras nos EUA.', places: results})
+		let googleDescription = '<meta name="description" content="Encontre empresas brasileiras nos EUA e negocie com a comunidade brasileira nos Estados Unidos da América." />'
+		let googleMedias = '<script type="application/ld+json">{"@context": "http://schema.org","@type": "Person","name": "Brazbiss","url": "http://www.brazbiss.com","sameAs": ["https://www.facebook.com/Brazbiss-1568609906532929/","https://medium.com/brazbiss"]}</script>'
+		let facebook = '<meta property="og:url" content="http://www.brazbiss.com" /><meta property="og:type" content="article" /><meta property="og:title" content="Encontre empresas brasileiras nos EUA | Brazbiss.com<" /><meta property="og:description" content="Encontre empresas brasileiras nos EUA e negocie com a comunidade brasileira nos Estados Unidos da América." /><meta property="og:image" content="https://i.imgur.com/F7scg9x.png" />'
+		let linkedIn = '<meta property="og:title" content="Encontre empresas brasileiras nos EUA." /><meta property="og:description" content="Encontre empresas brasileiras nos EUA e negocie com a comunidade brasileira nos Estados Unidos da América." /><meta property="og:url" content="http://brazbiss.com/" /><meta property="og:image" content="https://i.imgur.com/F7scg9x.png" />'
+
+		res.render('pages/index',{title: 'Encontre empresas brasileiras nos EUA.', places: results, metatags: {google: googleDescription, googleMedias: googleMedias, facebook: facebook, linkedin: linkedIn}})
 	})
 	
 })
@@ -29,7 +35,7 @@ app.get('/contact', function(req, res){
 app.all('/search/:state/:city/:category/:page*?', function(req, res){
 	let Companies = require('./models/Companies.model')
 	Companies.find({state:req.params.state,city:req.params.city,category:req.params.category},{'_id': 0},{sort: {name: 1}}, function(err,results){
-		res.render('pages/search',{title: req.params.category+' | '+req.params.city, state: req.params.state, city: req.params.city, category: req.params.category, companies: results})
+		res.render('pages/search',{title: req.params.category+' | '+req.params.city, state: req.params.state, city: req.params.city, category: req.params.category, companies: results,  metatags: {}})
 
 	})
 })
@@ -37,7 +43,7 @@ app.all('/search/:state/:city/:category/:page*?', function(req, res){
 app.get('/page/:friendlyUrl', function(req, res){
 	let Companies = require('./models/Companies.model')
 	Companies.findOne({url:req.params.friendlyUrl},{'_id': 0},{sort: {name: 1}}, function(err,results){
-		res.render('pages/page',{title: results.name + ' | ' + results.city + ' | ' + results.state || '', company: results})
+		res.render('pages/page',{title: results.name + ' | ' + results.city + ' | ' + results.state || '', company: results, metatags: {}})
 	})
 	
 })

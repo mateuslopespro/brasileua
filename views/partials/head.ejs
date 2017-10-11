@@ -2,8 +2,16 @@
 <html lang="pt-br">
 <head>
 	<!-- Metatags Google-->
-	<!-- Metatags Bing-->
+	<% if(metatags.google) {%>
+	<%- metatags.google %>
+	<% } %>
+	<% if(metatags.googleMedias) {%>
+	<%- metatags.googleMedias %>
+	<% } %>
 	<!-- Metatags Facebook-->
+	<% if(metatags.facebook) {%>
+	<%- metatags.facebook %>
+	<% } %>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<title><%- title %></title>
