@@ -67,7 +67,7 @@ $(document).ready(function(){
 				}
 			}
 			else{
-				$('.form-search .selectCity').html('<option value="none">Escolha o estado</option>')
+				$('.form-search .selectCity').html('<option value="none">Escolha a cidade</option>')
 				$('.form-search .selectCategory').html('<option value="none">Escolha o estado</option>')
 				$('.form-search .btn').addClass('disabled')
 			}

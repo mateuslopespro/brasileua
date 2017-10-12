@@ -14,7 +14,8 @@ let companySchema = new Schema({
         facebook: String,
         instagram: String,
         youtube: String,
-        twitter: String
+        twitter: String,
+        image: String
     },
     phones: {
         cell: String,
