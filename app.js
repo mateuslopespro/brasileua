@@ -2,7 +2,6 @@ const express = require('express')
 let mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 const cors = require('cors')
-
 const database = process.env.DB
 const app = express()
 const port = process.env.PORT || 3000

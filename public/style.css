@@ -17,9 +17,18 @@ footer{
 	line-height: 100px;
 	width:100%;
 }
-footer.fixed {position:fixed; bottom:0px;}
 footer i{
 	padding: 10px;
+}
+.ads-home{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: block;
+}
+.ads-home img{
+	margin-bottom: 20px;
+	width: 300px;
+	height: 300px;
 }
 .banner-top-button a{
 	display: inline-block;

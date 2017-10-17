@@ -41,12 +41,7 @@ $(document).ready(function(){
     }
   });
 
-	//footer
-	if ($(".container-fluid").height()<$(window).height()){
-	        $("footer").addClass("fixed");
-	    }else{
-	        $("footer").removeClass("fixed");
-	    }
+
 
 	//index form places
 	$('.form-search form select').width(($('.form-search div').width())*0.8)
