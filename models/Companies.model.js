@@ -21,6 +21,12 @@ let companySchema = new Schema({
         cell: String,
         landline: String,
         whatsapp: String
+    },
+    metatags: {
+        googleDescription: String,
+        bingDescription: String,
+        facebookTitle: String,
+        facebookDescription: String
     }
 })
 
