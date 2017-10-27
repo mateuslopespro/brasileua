@@ -54,7 +54,7 @@ $(document).ready(function(){
 	
 		$('.form-search .selectState').on('change', function(){
 			if($('.form-search .selectState').val()!="none"){
-				$('.form-search .selectCity').html('<option value="none">Escolha o estado</option>')
+				$('.form-search .selectCity').html('<option value="none">Escolha a cidade</option>')
 				state = $('.form-search .selectState').val()
 				let iState = states.indexOf(state)
 				for(let y = 0; y<places[iState].cities.length;y++){
@@ -63,7 +63,7 @@ $(document).ready(function(){
 			}
 			else{
 				$('.form-search .selectCity').html('<option value="none">Escolha a cidade</option>')
-				$('.form-search .selectCategory').html('<option value="none">Escolha o estado</option>')
+				$('.form-search .selectCategory').html('<option value="none">Escolha a categoria</option>')
 				$('.form-search .btn').addClass('disabled')
 			}
 		})
